@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "gruntfuggly.todo-tree",
+        "mosapride.zenkaku",
+        "shardulm94.trailing-spaces",
+        "eamodio.gitlens",
+        "coenraads.bracket-pair-colorizer",
+        "editorconfig.editorconfig",
+        "kokororin.vscode-phpfmt",
+        "bmewburn.vscode-intelephense-client",
+        "onecentlin.laravel-extension-pack",
+        "esbenp.prettier-vscode",
+        "shufo.vscode-blade-formatter"
+    ]
+}

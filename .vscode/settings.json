@@ -1,0 +1,21 @@
+{
+    "files.eol": "\n",
+    "[php]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "kokororin.vscode-phpfmt"
+    },
+    "[blade]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+    },
+    "phpfmt.enable_auto_align": true,
+    "phpfmt.smart_linebreak_after_curly": true,
+    "blade.format.enable": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
