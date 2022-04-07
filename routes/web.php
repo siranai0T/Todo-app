@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SampleController;
-use App\Http\Controllers\HellowWorldController;
+use App\Http\Controllers\HelloWorldController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +17,7 @@ use App\Http\Controllers\HellowWorldController;
 
 Route::get('/', [SampleController::class, 'index'])->name('welcome');
 
-Route::get('/hellow', [HellowWorldController::class, 'index'])->name('hellow.world');
-Route::post('/hellow', [HellowWorldController::class, 'store'])->name('hellow.world');
+Route::get('/hello', [HelloWorldController::class, 'index'])->name('hello.world');
+Route::post('/hello', [HelloWorldController::class, 'store'])->name('hello.world');
+
+//Route::view('/hello', 'hello-world')->name('hello.world');
