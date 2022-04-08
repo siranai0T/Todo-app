@@ -15,7 +15,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-        //
+        $todos = Todo::all();
+        return view('todo.index', compact('todos'));
     }
 
     /**
@@ -38,10 +39,10 @@ class TodoController extends Controller
     {
         try {
             DB::beginTransaction();
-            $task               = new Todo();
-            $task->task_title   = $request->task_title;
-            $task->task_content = $request->task_title;
-            $task->save();
+            $todo               = new Todo();
+            $todo->todo_title   = $request->todo_title;
+            $todo->todo_content = $request->todo_title;
+            $todo->save();
             DB::commit();
             return redirect()->route('todos.index');
         } catch (\Exception $e) {
