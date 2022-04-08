@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SampleController::class, 'index'])->name('welcome');
 
-// Route::get('/hello', [HelloWorldController::class, 'index'])->name('hello.world');
-// Route::post('/hello', [HelloWorldController::class, 'store'])->name('hello.world');
+Route::get('/hello', [HelloWorldController::class, 'index'])->name('hello.world');
+Route::post('/hello', [HelloWorldController::class, 'store'])->name('hello.world');
 
 //Route::view('/hello', 'hello-world')->name('hello.world');
 
