@@ -36,8 +36,8 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $task               = new Todo();
-        $task->task_title   = $request->input('task_title');
-        $task->task_content = $request->input('task_content');
+        $task->task_title   = $request->task_title;
+        $task->task_content = $request->task_title;
         $task->save();
         return redirect('/todos');
     }
