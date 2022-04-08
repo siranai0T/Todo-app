@@ -20,12 +20,12 @@
                 <form method="POST" action="{{ url('/todos') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="title" class="control-label">タイトル</label>
+                        <label for="title" class="form-label">タイトル</label>
                         <input type="text" name="task_title" class="form-control">
-                        <label for="content" class="control-label">内容</label>
+                        <label for="content" class="form-label">内容</label>
                         <input type="text" name="task_content" class="form-control">
                     </div>
-                    <div text-align:right>
+                    <div class="text-right">
                         <button type="submit" class="btn btn-success">登録</button>
                     </div>
                 </form>
