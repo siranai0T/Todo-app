@@ -17,7 +17,7 @@
         <div class="card mb-3">
             <div class="card-header">新規登録</div>
             <div class="card-body">
-                <form method="POST" action="{{ url('/todos') }}">
+                <form method="POST" action="{{ route('todos.store') }}">
                     @csrf
                     <div class="form-group">
                         <label for="title" class="form-label">タイトル</label>
@@ -33,7 +33,5 @@
         </div>
     </div>
 </body>
-
-</html>
 
 </html>

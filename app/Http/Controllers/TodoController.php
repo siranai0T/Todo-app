@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TodoController extends Controller
 {
@@ -35,11 +36,17 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        $task               = new Todo();
-        $task->task_title   = $request->task_title;
-        $task->task_content = $request->task_title;
-        $task->save();
-        return redirect('/todos');
+        try {
+            DB::beginTransaction();
+            $task               = new Todo();
+            $task->task_title   = $request->task_title;
+            $task->task_content = $request->task_title;
+            $task->save();
+            DB::commit();
+            return redirect()->route('todos.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+        }
     }
 
     /**
