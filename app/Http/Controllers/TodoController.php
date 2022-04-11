@@ -41,7 +41,7 @@ class TodoController extends Controller
             DB::beginTransaction();
             $todo               = new Todo();
             $todo->todo_title   = $request->todo_title;
-            $todo->todo_content = $request->todo_title;
+            $todo->todo_content = $request->todo_content;
             $todo->save();
             DB::commit();
             return redirect()->route('todos.index');
@@ -69,7 +69,8 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todo = Todo::find($id);
+        return view('todo.edit', compact('todo'));
     }
 
     /**
@@ -81,7 +82,17 @@ class TodoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try {
+            DB::beginTransaction();
+            $todo               = Todo::find($id);
+            $todo->todo_title   = $request->todo_title;
+            $todo->todo_content = $request->todo_content;
+            $todo->save();
+            DB::commit();
+            return redirect()->route('todos.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+        }
     }
 
     /**
