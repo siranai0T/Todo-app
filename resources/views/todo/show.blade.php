@@ -20,23 +20,21 @@
                         詳細画面
                     </div>
                     <div class="card-body">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <th>id</th>
-                                    <td>{{ $todo->id }}</td>
-                                </tr>
-                                <tr>
-                                    <th>タイトル</th>
-                                    <td>{{ $todo->todo_title }}</td>
-                                </tr>
-                                <tr>
-                                    <th>内容</th>
-                                    <td>{{ $todo->todo_content }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <a href="{{ route('todos.index') }}">一覧へ</a>
+                        <div class="mb-3 row">
+                            <label for="title" class="col-sm-2 col-form-label">タイトル</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" id="title"
+                                    value="{{ $todo->todo_title }}">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="content" class="col-sm-2 col-form-label">内容</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" id="content"
+                                    value="{{ $todo->todo_content }}">
+                            </div>
+                        </div>
+                        <a href=" {{ route('todos.index') }}">一覧へ</a>
                     </div>
                 </div>
             </div>
