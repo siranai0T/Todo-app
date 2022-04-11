@@ -104,6 +104,7 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Todo::destroy($id);
+        return redirect()->route('todos.index');
     }
 }

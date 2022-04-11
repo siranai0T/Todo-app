@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <h3 class="my-3">TODOアプリ</h3>
-        <div class="card mb-3">
+        <div class="card">
             <div class="card-header">新規登録</div>
             <div class="card-body">
                 <form method="post" action="{{ route('todos.store') }}">
