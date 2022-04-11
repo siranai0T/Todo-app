@@ -24,6 +24,7 @@
                             <th>id</th>
                             <th>タイトル</th>
                             <th>内容</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,6 +33,9 @@
                                 <td>{{ $todo->id }}</td>
                                 <td>{{ $todo->todo_title }}</td>
                                 <td>{{ $todo->todo_content }}</td>
+                                <td> <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-info mb-3">編集</a>
+                                </td>
+
                             </tr>
                         @endforeach
                     </tbody>
