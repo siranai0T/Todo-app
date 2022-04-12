@@ -13,30 +13,27 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        詳細画面
-                    </div>
-                    <div class="card-body">
-                        <div class="mb-3 row">
-                            <label for="title" class="col-sm-2 col-form-label">タイトル</label>
-                            <div class="col-sm-10">
-                                <input type="text" readonly class="form-control-plaintext" id="title"
-                                    value="{{ $todo->todo_title }}">
-                            </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="content" class="col-sm-2 col-form-label">内容</label>
-                            <div class="col-sm-10">
-                                <input type="text" readonly class="form-control-plaintext" id="content"
-                                    value="{{ $todo->todo_content }}">
-                            </div>
-                        </div>
-                        <a href=" {{ route('todos.index') }}">一覧へ</a>
+        <h3 class="my-3">TODOアプリ</h3>
+        <div class="card">
+            <div class="card-header">
+                詳細画面
+            </div>
+            <div class="card-body">
+                <div class="mb-3 row">
+                    <label for="title" class="col-sm-2 col-form-label">タイトル</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="title"
+                            value="{{ $todo->todo_title }}">
                     </div>
                 </div>
+                <div class="mb-3 row">
+                    <label for="content" class="col-sm-2 col-form-label">内容</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="content"
+                            value="{{ $todo->todo_content }}">
+                    </div>
+                </div>
+                <a href=" {{ route('todos.index') }}">一覧へ</a>
             </div>
         </div>
     </div>

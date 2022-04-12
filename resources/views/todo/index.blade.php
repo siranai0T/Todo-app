@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <h3 class="my-3">TODOアプリ</h3>
-        <div class="card mb-3">
+        <div class="card">
             <div class="card-header">TODO一覧</div>
             <div class="card-body">
                 <a href="{{ route('todos.create') }}" class="btn btn-success mb-3">新規登録</a>
@@ -24,6 +24,7 @@
                             <th>id</th>
                             <th>タイトル</th>
                             <th>内容</th>
+                            <th></th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -37,6 +38,13 @@
                                 <td> <a href="{{ route('todos.show', $todo->id) }}" class="btn btn-primary mb-3">詳細</a>
                                 </td>
                                 <td> <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-info mb-3">編集</a>
+                                </td>
+                                <td>
+                                    <form method="post" action="{{ route('todos.destroy', $todo->id) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">削除</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
