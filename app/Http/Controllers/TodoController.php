@@ -48,6 +48,7 @@ class TodoController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
         }
+        return back()->withInput();
     }
 
     /**
@@ -94,6 +95,7 @@ class TodoController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
         }
+        return back()->withInput();
     }
 
     /**
@@ -104,7 +106,14 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        Todo::destroy($id);
-        return redirect()->route('todos.index');
+        try {
+            DB::beginTransaction();
+            Todo::destroy($id);
+            DB::commit();
+            return redirect()->route('todos.index');
+        } catch (\Exception $e) {
+            DB::rollBack();
+        }
+        return back()->withInput();
     }
 }
