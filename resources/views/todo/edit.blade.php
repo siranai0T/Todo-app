@@ -19,7 +19,7 @@
                 編集画面
             </div>
             <div class="card-body">
-                <form method="post" action="{{ route('todos.update', ['todo' => $todo]) }}" class="form-horizontal">
+                <form method="post" action="{{ route('todos.update', $todo->id) }}" class="form-horizontal">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
