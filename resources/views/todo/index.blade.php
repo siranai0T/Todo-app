@@ -25,7 +25,7 @@
                             <th>タイトル</th>
                             <th>内容</th>
                             <th>期限</th>
-                            {{-- <th>状態</th> --}}
+                            <th>状態</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -38,7 +38,7 @@
                                 <td>{{ $todo->title }}</td>
                                 <td>{{ $todo->content }}</td>
                                 <td>{{ $todo->deadline }}</td>
-                                {{-- <td>{{ $todo->status_id }}</td> --}}
+                                <td>{{ $todo->status_id }}</td>
                                 <td> <a href="{{ route('todos.show', $todo->id) }}"
                                         class="btn btn-primary mb-3">詳細</a> </td>
                                 <td> <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-info mb-3">編集</a>

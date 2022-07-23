@@ -40,13 +40,13 @@
                             value="{{ $todo->deadline }}">
                     </div>
                 </div>
-                {{-- <div class="mb-3 row">
+                <div class="mb-3 row">
                     <label for="priority" class="col-sm-2 col-form-label">状態</label>
                     <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="status_id"
                             value="{{ $todo->status_id }}">
                     </div>
-                </div> --}}
+                </div>
                 <a href=" {{ route('todos.index') }}">一覧へ</a>
             </div>
         </div>

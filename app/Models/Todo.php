@@ -11,4 +11,9 @@ class Todo extends Model
 
     protected $fillable = ['title', 'content','deadline','completion_date','status_id'];
 
+    public function status()
+    {
+        // ステータスが１つ
+        return $this->hasMany('App\Models\Status');
+    }
 }

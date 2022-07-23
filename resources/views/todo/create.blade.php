@@ -26,13 +26,24 @@
                         <input type="text" name="content" class="form-control">
                         <label for="deadline" class="form-label">期限 </label>
                         <input type="date" name="deadline" class="form-control">
-                        {{-- <label for="status_id" class="form-label">状態 </label>
-                        <select class="form-control" id="status_id" name="status">
+                        <label for="status_id" class="form-label">状態 </label>
+                        <input type="number" name="status_id" class="form-control">
+                        {{-- <select class="form-control" id="status_id" name="status_id">
                             <option value="1">未着手</option>
                             <option value="2">進行中</option>
                             <option value="3">完了</option>
                             <option value="4">期限切れ</option>
                         </select> --}}
+                        {{-- <div class="form-group">
+                            <label for="status-id" class="form-label">状態 </label>
+                            <select class="form-control" id="status-id" name="status_id">
+                                @foreach ($statuses as $status)
+                                    <option value="{{ $status->status_id }}">{{ $status->status_name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div> --}}
+
                     </div>
             </div>
             <div>

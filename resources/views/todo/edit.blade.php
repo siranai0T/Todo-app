@@ -33,8 +33,9 @@
                         <input type="text" name="content" class="form-control" value="{{ $todo->content }}">
                         <label for="deadline" class="form-label">期限 </label>
                         <input type="date" name="deadline" class="form-control" value="{{ $todo->deadline }}">
-                        {{-- <label for="status_id" class="form-label">状態 </label>
-                        <select class="form-control" id="status_id" name="status"
+                        <label for="status_id" class="form-label">状態 </label>
+                        <input type="number" name="status_id" class="form-control" value="{{ $todo->status_id }}">
+                        {{-- <select class="form-control" id="status_id" name="status"
                             value="{{ $todo->status_id }}">
                             <option value="1">未着手</option>
                             <option value="2">進行中</option>

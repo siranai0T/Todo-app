@@ -15,8 +15,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-        // $todos = Todo::orderBy('id','desc')->get();
-        $todos = Todo::all();
+        // $todos = Todo::all();
+        $todos = Todo::orderBy('id','desc')->get();
         return view('todo.index',compact('todos'));
     }
 
@@ -44,7 +44,7 @@ class TodoController extends Controller
             $todo->title  =  $request->title;
             $todo->content  =  $request->content;
             $todo->deadline  =  $request->deadline;
-            // $todo->status_id  =  $request->status_id;
+            $todo->status_id  =  $request->status_id;
             $todo->save();
             DB::commit();
             return redirect()->route('todos.index');
@@ -93,7 +93,7 @@ class TodoController extends Controller
             $todo->title  = $request->title;
             $todo->content = $request->content;
             $todo->deadline  =  $request->deadline;
-            // $todo->status_id  =  $request->status_id;
+            $todo->status_id  =  $request->status_id;
             $todo->save();
             DB::commit();
             return redirect()->route('todos.index');
