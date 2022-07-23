@@ -6,7 +6,8 @@ class HelloWorldController extends Controller
 {
     public function index()
     {
-        return view('hello-world');
+        $name = "田中";
+        return view('hello-world', compact('name'));
     }
 
 }
