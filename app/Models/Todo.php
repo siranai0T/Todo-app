@@ -51,7 +51,7 @@ class Todo extends Model
         $status = $this->attributes['status'];
 
         // 定義されていなければ空文字を返す
-        if (empty(self::STATUS[$status])) {
+        if (!isset(self::STATUS[$status])) {
             return '';
         }
 
