@@ -21,11 +21,11 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>タイトル</th>
-                            <th>内容</th>
-                            <th>期限</th>
-                            <th>状態</th>
+                            <th scope="col">@sortablelink('id', 'ID')</th>
+                            <th scope="col">@sortablelink('title', 'タイトル')</th>
+                            <th scope="col">@sortablelink('content', '内容')</th>
+                            <th scope="col">@sortablelink('deadline', '期限')</th>
+                            <th scope="col">@sortablelink('status', '状態')</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -54,7 +54,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{ $todos->links() }}
+                {{ $todos->appends(request()->query())->links() }}
             </div>
         </div>
     </div>
