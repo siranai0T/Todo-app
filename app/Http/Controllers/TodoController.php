@@ -17,6 +17,7 @@ class TodoController extends Controller
     {
         // $todos = Todo::all();
         $todos = Todo::orderBy('id','desc')->get();
+        $todos = Todo::paginate(5);
         return view('todo.index',compact('todos'));
     }
 
