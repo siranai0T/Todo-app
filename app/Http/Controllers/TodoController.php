@@ -44,7 +44,7 @@ class TodoController extends Controller
             $todo->title  =  $request->title;
             $todo->content  =  $request->content;
             $todo->deadline  =  $request->deadline;
-            $todo->status_id  =  $request->status_id;
+            $todo->status  =  $request->status;
             $todo->save();
             DB::commit();
             return redirect()->route('todos.index');
@@ -93,7 +93,7 @@ class TodoController extends Controller
             $todo->title  = $request->title;
             $todo->content = $request->content;
             $todo->deadline  =  $request->deadline;
-            $todo->status_id  =  $request->status_id;
+            $todo->status  =  $request->status;
             $todo->save();
             DB::commit();
             return redirect()->route('todos.index');

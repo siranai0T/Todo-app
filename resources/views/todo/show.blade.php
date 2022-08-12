@@ -44,7 +44,7 @@
                     <label for="priority" class="col-sm-2 col-form-label">状態</label>
                     <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="status_id"
-                            value="{{ $todo->status_id }}">
+                            value="{{ $todo->status_label }}">
                     </div>
                 </div>
                 <a href=" {{ route('todos.index') }}">一覧へ</a>

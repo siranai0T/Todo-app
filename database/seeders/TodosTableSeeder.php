@@ -20,7 +20,7 @@ class TodosTableSeeder extends Seeder
             'content' => 'テスト１の内容です',
             'deadline' => '2022/06/06',
             'completion_date' => NULL,
-            'status_id' => '1',
+            'status' => '1',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -30,7 +30,7 @@ class TodosTableSeeder extends Seeder
             'content' => 'テスト２の内容ですよ',
             'deadline' => '2022/08/06',
             'completion_date' => NULL,
-            'status_id' => '2',
+            'status' => '2',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ]);
@@ -40,7 +40,7 @@ class TodosTableSeeder extends Seeder
             'content' => 'テスト３の内容だよ',
             'deadline' => '2022/07/07',
             'completion_date' => '2022/07/07',
-            'status_id' => '3',
+            'status' => '3',
             'created_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),
         ],
