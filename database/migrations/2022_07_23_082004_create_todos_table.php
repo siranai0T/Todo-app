@@ -19,7 +19,7 @@ class CreateTodosTable extends Migration
             $table->string('content',50)->nullable()->comment('内容');
             $table->date('deadline')->nullable()->comment('完了期限');
             $table->date('completion_date')->nullable()->comment('完了日');
-            $table->integer('status_id')->default(1)->comment('ステータスID');
+            $table->integer('status')->default(1)->comment('ステータスID');
             $table->softDeletes()->comment('削除日時 : 削除を行った日時  この値がnullでなかったら、削除を行ったとみなす');
             $table->timestamps();
         });

@@ -34,14 +34,14 @@
                         <label for="deadline" class="form-label">期限 </label>
                         <input type="date" name="deadline" class="form-control" value="{{ $todo->deadline }}">
                         <label for="status_id" class="form-label">状態 </label>
-                        <input type="number" name="status_id" class="form-control" value="{{ $todo->status_id }}">
-                        {{-- <select class="form-control" id="status_id" name="status"
-                            value="{{ $todo->status_id }}">
-                            <option value="1">未着手</option>
-                            <option value="2">進行中</option>
-                            <option value="3">完了</option>
-                            <option value="4">期限切れ</option>
-                        </select> --}}
+                        <select name="status" id="status" class="form-control">
+                            @foreach (\App\Models\Todo::STATUS as $key => $val)
+                                <option value="{{ $key }}"
+                                    {{ $key == old('status', $todo->status) ? 'selected' : '' }}>
+                                    {{ $val['label'] }}
+                                </option>
+                            @endforeach
+                        </select>
                     </div>
                     <div>
                         <button type="submit" class="btn btn-success">更新</button>
