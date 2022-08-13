@@ -18,6 +18,31 @@
             <div class="card-header">TODO一覧</div>
             <div class="card-body">
                 <a href="{{ route('todos.create') }}" class="btn btn-success mb-3">新規登録</a>
+
+                <form method="GET" action="{{ route('todos.index') }}">
+                    {{-- <div class="form-group row">
+                        <label class="col-sm-2" for="">タイトルで検索</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" name="searchWord" value="{{ $searchWord }}">
+                        </div>
+                    </div> --}}
+                    <div class="form-group row m-3">
+                        <label class="col-sm-2">状態で絞り込み</label>
+                        <div class="col-sm-3">
+                            <select name="status" id="status" class="form-control">
+                                <option value="">全て</option>
+                                @foreach (\App\Models\Todo::STATUS as $key => $val)
+                                    <option value="{{ $key }}" {{ old('status' === $key ? 'selected' : '') }}>
+                                        {{ $val['label'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-sm-auto">
+                            <button type="submit" class="btn btn-primary ">検索</button>
+                        </div>
+                    </div>
+                </form>
                 <table class="table">
                     <thead>
                         <tr>
@@ -32,13 +57,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($todos as $todo)
+                        @foreach ($data as $todo)
                             <tr>
                                 <td>{{ $todo->id }}</td>
                                 <td>{{ $todo->title }}</td>
                                 <td>{{ $todo->content }}</td>
                                 <td>{{ $todo->deadline }}</td>
-                                <td><span class="label {{ $todo->status_class }}">{{ $todo->status_label }}</span></td>
+                                <td><span class="label {{ $todo->status_class }}">{{ $todo->status_label }}</span>
+                                </td>
                                 <td> <a href="{{ route('todos.show', $todo->id) }}" class="btn btn-primary mb-3">詳細</a>
                                 </td>
                                 <td> <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-info mb-3">編集</a>
@@ -54,7 +80,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{ $todos->appends(request()->query())->links() }}
+                {{ $data->appends(request()->query())->links() }}
             </div>
         </div>
     </div>
