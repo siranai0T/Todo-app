@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [SampleController::class, 'index'])->name('welcome');
 Route::get('/hello', [HelloWorldController::class, 'index'])->name('hello.world');
 Route::resource('todos', TodoController::class);
+    Route::get('todo/index',[PostController::class, 'index'])->name('index');

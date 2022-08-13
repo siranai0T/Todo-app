@@ -43,7 +43,7 @@
                 <div class="mb-3 row">
                     <label for="priority" class="col-sm-2 col-form-label">状態</label>
                     <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="status_id"
+                        <input type="text" readonly class="form-control-plaintext" id="status"
                             value="{{ $todo->status_label }}">
                     </div>
                 </div>

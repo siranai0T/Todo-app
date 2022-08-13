@@ -5,14 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Kyslik\ColumnSortable\Sortable;
 
 class Todo extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    use Sortable;
 
-    protected $fillable = ['title', 'content','deadline','completion_date','status_id'];
+    protected $fillable = ['title', 'content','deadline','completion_date','status'];
     protected $dates = ['deleted_at'];
+    public $sortable = ['id', 'title', 'content', 'deadline','status'];
 
  /**
      * 状態定義

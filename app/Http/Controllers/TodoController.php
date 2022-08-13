@@ -13,11 +13,38 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    // public function index()
+    // {
+    //     $todos = Todo::all();
+    //     $todos = Todo::sortable()->paginate(5);
+    //     return view('todo.index',compact('todos'));
+    // }
+
+    public function index(Request $request)
     {
-        // $todos = Todo::all();
-        $todos = Todo::orderBy('id','desc')->get();
-        return view('todo.index',compact('todos'));
+        $query = Todo::query();
+
+        //$request->input()で検索した項目を取得
+        $statusId = $request->input('status');
+        // $searchWord = $request->input('searchWord');
+
+         // プルダウンメニューで指定なし以外を選択した場合、$query->whereで選択した好きな戦法と一致するカラムを取得します
+        if ($statusId!=null) {
+            $query->where('status', $statusId)->get();
+        }
+
+        // タイトル入力フォームで入力した文字列を含むカラムを取得します
+        // if($searchWord!=null) {
+        //     $query->where('title', 'LIKE', "%{$searchWord}%")
+        //         ->orWhere('content', 'LIKE', "%{$searchWord}%")->get();
+        // }
+
+        $data = $query->sortable()->paginate(5);
+
+        return view('todo.index',[
+            //  'searchWord' => $searchWord,
+             'data' => $data
+        ]);
     }
 
     /**
