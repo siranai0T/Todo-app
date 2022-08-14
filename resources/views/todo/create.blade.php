@@ -26,7 +26,9 @@
                         <input type="text" name="content" class="form-control">
                         <label for="deadline" class="form-label">期限 </label>
                         <input type="date" name="deadline" class="form-control">
-                        <label for="status_id" class="form-label">状態 </label>
+                        <label for="completion_date" class="form-label">完了日 </label>
+                        <input type="date" name="completion_date" class="form-control">
+                        <label for="status" class="form-label">状態 </label>
                         <select class="form-control" id="status" name="status">
                             <option value="1">未着手</option>
                             <option value="2">進行中</option>

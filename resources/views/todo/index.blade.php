@@ -48,8 +48,8 @@
                         <tr>
                             <th scope="col">@sortablelink('id', 'ID')</th>
                             <th scope="col">@sortablelink('title', 'タイトル')</th>
-                            <th scope="col">@sortablelink('content', '内容')</th>
                             <th scope="col">@sortablelink('deadline', '期限')</th>
+                            <th scope="col">@sortablelink('completion_date', '完了日')</th>
                             <th scope="col">@sortablelink('status', '状態')</th>
                             <th></th>
                             <th></th>
@@ -61,8 +61,8 @@
                             <tr>
                                 <td>{{ $todo->id }}</td>
                                 <td>{{ $todo->title }}</td>
-                                <td>{{ $todo->content }}</td>
                                 <td>{{ $todo->deadline }}</td>
+                                <td>{{ $todo->completion_date }}</td>
                                 <td><span class="label {{ $todo->status_class }}">{{ $todo->status_label }}</span>
                                 </td>
                                 <td> <a href="{{ route('todos.show', $todo->id) }}" class="btn btn-primary mb-3">詳細</a>

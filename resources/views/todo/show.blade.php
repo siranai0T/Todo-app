@@ -34,14 +34,21 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="priority" class="col-sm-2 col-form-label">期限</label>
+                    <label for="deadline" class="col-sm-2 col-form-label">期限</label>
                     <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="deadline"
                             value="{{ $todo->deadline }}">
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <label for="priority" class="col-sm-2 col-form-label">状態</label>
+                    <label for="completion_date" class="col-sm-2 col-form-label">完了日</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="completion_date"
+                            value="{{ $todo->completion_date }}">
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="status" class="col-sm-2 col-form-label">状態</label>
                     <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="status"
                             value="{{ $todo->status_label }}">

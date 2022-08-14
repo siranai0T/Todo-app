@@ -33,7 +33,9 @@
                         <input type="text" name="content" class="form-control" value="{{ $todo->content }}">
                         <label for="deadline" class="form-label">期限 </label>
                         <input type="date" name="deadline" class="form-control" value="{{ $todo->deadline }}">
-                        <label for="status_id" class="form-label">状態 </label>
+                        <label for="completion_date" class="form-label">完了日 </label>
+                        <input type="date" name="completion_date" class="form-control" value="{{ $todo->completion_date }}">
+                        <label for="status" class="form-label">状態 </label>
                         <select name="status" id="status" class="form-control">
                             @foreach (\App\Models\Todo::STATUS as $key => $val)
                                 <option value="{{ $key }}"
