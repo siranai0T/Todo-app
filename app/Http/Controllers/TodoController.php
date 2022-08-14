@@ -65,6 +65,12 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|max:20',
+            'content' => 'max:50',
+         ],
+        );
+
         try {
             DB::beginTransaction();
             $todo  =  new Todo();
@@ -114,6 +120,12 @@ class TodoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required|max:20',
+            'content' => 'max:50',
+         ],
+       );
+
         try {
             DB::beginTransaction();
             $todo = Todo::find($id);
