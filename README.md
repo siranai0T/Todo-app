@@ -2,19 +2,19 @@
 
 Laravelを利用したタスク管理用Webアプリケーション
 
-# はじめに
+## はじめに
 
-本アプリは、Docker（WSL2）に Linux環境を構築するため、Ubuntu を使用しています。
+本アプリは、Docker（WSL2）に Linux環境を構築するため、Ubuntu を使用しています。  
 以下の手順でリポジトリをクローンする環境を作ります。
 
 1. docker desktop をインストールし、起動
 
-2. Microsoft Store から Ubuntu をインストール
+2. Microsoft Store から Ubuntu をインストール  
     今回使用したバージョンは「Ubuntu 20.04 LTS」
 
 3. インストールが終了したらスタートメニューから Ubuntu を起動
 
-4. エクスプローラーで「\\wsl$」へアクセス
+4. エクスプローラーで「\\wsl$」へアクセス  
     docker-desktop, docker-desktop-data, Ubuntu-20.04 があることを確認する
 
 5. PowerShell にて以下コマンド実行
@@ -34,7 +34,7 @@ Laravelを利用したタスク管理用Webアプリケーション
 
 ## インストール法、始め方
 
-1. \wsl$\Ubuntu-20.04\home にToDo_Appディレクトリを作成
+1. \wsl$\Ubuntu-20.04\home にToDo_Appディレクトリを作成  
 ※ユーザを作成している場合は、ユーザのディレクトリに作成
 
 2. 作成したディレクトリに以下のリポジトリをクローン
@@ -47,19 +47,19 @@ Laravelを利用したタスク管理用Webアプリケーション
 
 5. Ubuntu にて以下コマンド実行
 
-```
-# コンテナを作成して、起動させる
-cd /home/ToDo_App/Todo-docker
-docker compose build　# しばらく時間がかかる
-docker compose up -d
+    ```
+    # コンテナを作成して、起動させる
+    cd /home/ToDo_App/Todo-docker
+    docker compose build　# しばらく時間がかかる
+    docker compose up -d
 
-# コンテナ内に入ってComposerをインストールする
-sudo docker exec -i -t Todo-docker-app-1 bash　#コンテナ内に入る方法は他にもあるので好きな方法で
-composer install
+    # コンテナ内に入ってComposerをインストールする
+    sudo docker exec -i -t Todo-docker-app-1 bash　#コンテナ内に入る方法は他にもあるので好きな方法で
+    composer install
 
-# コンテナ内から出る
-exit
-```
+    # コンテナ内から出る
+    exit
+    ```
 
 6. 以下にアクセスして、起動！！
     * http://localhost:82/todos
@@ -73,11 +73,11 @@ exit
     * タスクの削除、新規登録画面・詳細画面・編集画面への遷移
 
 * 新規登録画面
-    * タスクの新規登録
+    * タスクの新規登録  
       タイトル、詳細内容、期限、完了日、状態（）を入力・選択
 
 * 詳細画面
-    * タスクの詳細表示
+    * タスクの詳細表示  
         登録された内容のすべてを表示
 
 * 編集画面
