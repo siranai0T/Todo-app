@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Todo;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class TodoController extends Controller
 {
@@ -28,7 +29,7 @@ class TodoController extends Controller
         $statusId = $request->input('status');
         // $searchWord = $request->input('searchWord');
 
-         // プルダウンメニューで指定なし以外を選択した場合、$query->whereで選択した好きな戦法と一致するカラムを取得します
+         // プルダウンメニューで指定なし以外を選択した場合、$query->whereで選択した状態と一致するカラムを取得します
         if ($statusId!=null) {
             $query->where('status', $statusId)->get();
         }
