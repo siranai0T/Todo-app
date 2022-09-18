@@ -35,7 +35,7 @@ Laravelを利用したタスク管理用Webアプリケーション
 ## インストール法、始め方
 
 1. \wsl$\Ubuntu-20.04\home にToDo_Appディレクトリを作成
-    ※ユーザを作成している場合は、ユーザのディレクトリに作成
+※ユーザを作成している場合は、ユーザのディレクトリに作成
 
 2. 作成したディレクトリに以下のリポジトリをクローン
     * https://github.com/siranai0T/Todo-app.git
@@ -47,19 +47,19 @@ Laravelを利用したタスク管理用Webアプリケーション
 
 5. Ubuntu にて以下コマンド実行
 
-    ```
-    # コンテナを作成して、起動させる
-    cd /home/ToDo_App/Todo-docker
-    docker compose build　# しばらく時間がかかる
-    docker compose up -d
+```
+# コンテナを作成して、起動させる
+cd /home/ToDo_App/Todo-docker
+docker compose build　# しばらく時間がかかる
+docker compose up -d
 
-    # コンテナ内に入ってComposerをインストールする
-    sudo docker exec -i -t Todo-docker-app-1 bash　#コンテナ内に入る方法は他にもあるので好きな方法で
-    composer install
+# コンテナ内に入ってComposerをインストールする
+sudo docker exec -i -t Todo-docker-app-1 bash　#コンテナ内に入る方法は他にもあるので好きな方法で
+composer install
 
-    # コンテナ内から出る
-    exit
-    ```
+# コンテナ内から出る
+exit
+```
 
 6. 以下にアクセスして、起動！！
     * http://localhost:82/todos
