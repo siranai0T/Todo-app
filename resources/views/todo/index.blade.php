@@ -65,14 +65,14 @@
                                 <td>{{ $todo->completion_date }}</td>
                                 <td><span class="label {{ $todo->status_class }}">{{ $todo->status_label }}</span>
                                 </td>
-                                <td> <a href="{{ route('todos.show', $todo->id) }}" class="btn btn-primary mb-3">詳細</a>
+                                <td> <a href="{{ route('todos.show', $todo->id) }}" class="btn btn-secondary mb-3">詳細</a>
                                 </td>
                                 <td> <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-info mb-3">編集</a>
                                 <td>
                                     <form method="post" action="{{ route('todos.destroy', $todo->id) }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">削除</button>
+                                        <button type="submit" class="btn btn-danger" onclick='return confirm("削除しますか？");'>削除</button>
                                     </form>
                                 </td>
                                 </td>
