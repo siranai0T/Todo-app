@@ -9,6 +9,7 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://kit.fontawesome.com/14d67103af.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <div class="card">
             <div class="card-header">TODO一覧</div>
             <div class="card-body">
-                <a href="{{ route('todos.create') }}" class="btn btn-success mb-3">新規登録</a>
+                <a href="{{ route('todos.create') }}" class="btn btn-success mb-3"><i class="fa-solid fa-square-plus me-1"></i>新規登録</a>
 
                 <form method="GET" action="{{ route('todos.index') }}">
                     {{-- <div class="form-group row">
@@ -39,7 +40,7 @@
                             </select>
                         </div>
                         <div class="col-sm-auto">
-                            <button type="submit" class="btn btn-primary ">検索</button>
+                            <button type="submit" class="btn btn-primary "><i class="fa-solid fa-magnifying-glass me-1"></i>検索</button>
                         </div>
                     </div>
                 </form>
@@ -65,14 +66,14 @@
                                 <td>{{ $todo->completion_date }}</td>
                                 <td><span class="label {{ $todo->status_class }}">{{ $todo->status_label }}</span>
                                 </td>
-                                <td> <a href="{{ route('todos.show', $todo->id) }}" class="btn btn-secondary mb-3">詳細</a>
+                                <td> <a href="{{ route('todos.show', $todo->id) }}" class="btn btn-secondary mb-3"><i class="fa-solid fa-circle-info me-1"></i>詳細</a>
                                 </td>
-                                <td> <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-info mb-3">編集</a>
+                                <td> <a href="{{ route('todos.edit', $todo->id) }}" class="btn btn-info mb-3"><i class="fa-solid fa-pen-to-square me-1"></i>編集</a>
                                 <td>
                                     <form method="post" action="{{ route('todos.destroy', $todo->id) }}">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" onclick='return confirm("削除しますか？");'>削除</button>
+                                        <button type="submit" class="btn btn-danger" onclick='return confirm("削除しますか？");'><i class="fa-solid fa-trash-can me-1"></i>削除</button>
                                     </form>
                                 </td>
                                 </td>
