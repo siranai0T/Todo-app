@@ -1,64 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# ToDoアプリ
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+　Laravelを利用したタスク管理用Webアプリケーション
 
-## About Laravel
+# はじめに
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    本アプリは、Docker（WSL2）に Linux環境を構築するため、Ubuntu を使用しています。
+    以下の手順でリポジトリをクローンする環境を作ります。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    1. docker desktop をインストールし、起動
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    2. Microsoft Store から Ubuntu をインストール
+        今回使用したバージョンは「Ubuntu 20.04 LTS」
 
-## Learning Laravel
+    3. インストールが終了したらスタートメニューから Ubuntu を起動
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    4. エクスプローラーで「\\wsl$」へアクセス
+        docker-desktop, docker-desktop-data, Ubuntu-20.04 があることを確認する
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    5. PowerShell にて以下コマンド実行
+        ```
+        wsl --set-version Ubuntu-20.04 2
+        wsl -l -v 　# Ubuntu-20.04がVERSION2となっていることを確認
+        ```
+    6. DockerDesktop を開き、Settings > Resources > WSL INTEGRATION の Ubuntu-20.04 を ON に変更
 
-## Laravel Sponsors
+    7. スタートメニューから Ubuntu を起動し以下コマンド実行
+        ```
+        docker -v　# dockerのバージョンが表示されればOK
+        ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## インストール法、始め方
 
-### Premium Partners
+    1. \wsl$\Ubuntu-20.04\home にToDo_Appディレクトリを作成
+        ※ユーザを作成している場合は、ユーザのディレクトリに作成
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    2. 作成したディレクトリに以下のリポジトリをクローン
+    * https://github.com/siranai0T/Todo-app.git
+    * https://github.com/siranai0T/Todo-docker.git
 
-## Contributing
+    3. Todo-docker/.env.example ファイルをコピーし、.env へリネームする
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    4. Todo-app/.env.example ファイルをコピーし、.env へリネームする
 
-## Code of Conduct
+    5. Ubuntu にて以下コマンド実行
+        ```
+        # コンテナを作成して、起動させる
+        cd /home/ToDo_App/Todo-docker
+        docker compose build　# しばらく時間がかかる
+        docker compose up -d
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+        # コンテナ内に入ってComposerをインストールする
+        sudo docker exec -i -t Todo-docker-app-1 bash　#コンテナ内に入る方法は他にもあるので好きな方法で
+        composer install
 
-## Security Vulnerabilities
+        # コンテナ内から出る
+        exit
+        ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    6. 以下にアクセスして、起動！！
+        * http://localhost:82/todos
 
-## License
+## 使い方のサマリー
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    * 一覧画面
+        * タスクの一覧を表示
+        * タスクの状態で絞込検索
+        * カラム名を押下することで並び替え
+        * タスクの削除、新規登録画面・詳細画面・編集画面への遷移
+
+    * 新規登録画面
+        * タスクの新規登録
+            タイトル、詳細内容、期限、完了日、状態（）を入力・選択
+
+    * 詳細画面
+        * タスクの詳細表示
+            登録された内容のすべてを表示
+
+    * 編集画面
+        * タスクの編集
+
