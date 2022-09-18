@@ -16,13 +16,23 @@
         <h3 class="my-3">TODOアプリ</h3>
         <div class="card">
             <div class="card-header">新規登録</div>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="card-body">
                 <form method="post" action="{{ route('todos.store') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="title" class="form-label">タイトル</label>
+                        <label for="title" class="form-label">タイトル<span class="text-info">
+                                *必須。20文字以内。</span></label>
                         <input type="text" name="title" class="form-control">
-                        <label for="content" class="form-label">内容</label>
+                        <label for="content" class="form-label">内容<span class="text-info"> *50文字以内。</span></label>
                         <input type="text" name="content" class="form-control">
                         <label for="deadline" class="form-label">期限 </label>
                         <input type="date" name="deadline" class="form-control">
