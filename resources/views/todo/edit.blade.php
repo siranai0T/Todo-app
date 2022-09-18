@@ -59,10 +59,12 @@
                         </select>
                     </div>
                     <div>
-                        <button type="submit" class="btn btn-success">更新</button>
+                        <button type="submit" class="btn btn-success mt-3">更新</button>
                     </div>
                 </form>
-                <a href="{{ route('todos.index') }}">一覧へ</a>
+                <div class="d-flex justify-content-end">
+                <a href="{{ route('todos.index') }}" class="me-3">一覧へ</a>
+                </div>
             </div>
         </div>
     </div>

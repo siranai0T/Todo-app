@@ -48,10 +48,12 @@
                     </div>
             </div>
             <div>
-                <button type="submit" class="btn btn-success">登録</button>
+                <button type="submit" class="btn btn-success ms-3">登録</button>
             </div>
             </form>
-            <a href="{{ route('todos.index') }}">一覧へ</a>
+            <div class="d-flex justify-content-end">
+            <a href="{{ route('todos.index') }}" class="m-3">一覧へ</a>
+            </div>
         </div>
     </div>
     </div>

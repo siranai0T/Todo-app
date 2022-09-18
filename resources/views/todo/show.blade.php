@@ -54,7 +54,9 @@
                             value="{{ $todo->status_label }}">
                     </div>
                 </div>
-                <a href=" {{ route('todos.index') }}">一覧へ</a>
+                <div class="d-flex justify-content-end">
+                <a href="{{ route('todos.index') }}" class="me-3">一覧へ</a>
+                </div>
             </div>
         </div>
     </div>
