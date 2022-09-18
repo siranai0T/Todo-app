@@ -18,13 +18,16 @@
         docker-desktop, docker-desktop-data, Ubuntu-20.04 があることを確認する
 
     5. PowerShell にて以下コマンド実行
+
         ```
         wsl --set-version Ubuntu-20.04 2
         wsl -l -v 　# Ubuntu-20.04がVERSION2となっていることを確認
         ```
+
     6. DockerDesktop を開き、Settings > Resources > WSL INTEGRATION の Ubuntu-20.04 を ON に変更
 
     7. スタートメニューから Ubuntu を起動し以下コマンド実行
+
         ```
         docker -v　# dockerのバージョンが表示されればOK
         ```
@@ -43,6 +46,7 @@
     4. Todo-app/.env.example ファイルをコピーし、.env へリネームする
 
     5. Ubuntu にて以下コマンド実行
+
         ```
         # コンテナを作成して、起動させる
         cd /home/ToDo_App/Todo-docker
